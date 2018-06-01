@@ -1,0 +1,38 @@
+﻿<Window x:Class="SGOTouch.Index"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SGOTouch"
+        mc:Ignorable="d"
+        Title="Inicio sesión" Height="431.145" Width="442.797" Background="{x:Null}" FontSize="28" WindowStartupLocation="CenterScreen" WindowStyle="None" Icon="Asset/images/coffee_beam_20595.ico">
+    <Grid Background="White">
+        <Image x:Name="volcafeLogo"  HorizontalAlignment="Left" Height="133" Margin="90,27,0,0" VerticalAlignment="Top" Width="113"
+                Source="Asset/images/log.jpg" Focusable="True"/>
+        <Image x:Name="edfmanLogo"  HorizontalAlignment="Left" Height="101" Margin="209,27,0,0" VerticalAlignment="Top" Width="102"
+                Source="Asset\images\edfmanLogo.jpg" Focusable="True"/>
+        <Image x:Name="imgUser"  HorizontalAlignment="Left" Height="46" Margin="77,173,0,0" VerticalAlignment="Top" Width="46"
+                Source="Asset\images\user.png" Focusable="True"/>
+        <Image x:Name="imgUser_Copy"  HorizontalAlignment="Left" Height="47" Margin="76,224,0,0" VerticalAlignment="Top" Width="47"
+            Source="Asset/images/password.png" Focusable="True"/>
+        <TextBox x:Name="txtUsuario" HorizontalAlignment="Left" Height="41" FontSize="25"  Margin="128,173,0,0" TextWrapping="Wrap" Text=""   VerticalAlignment="Top" Width="243" ToolTip="1" TabIndex="1" FontFamily="Tunga" KeyDown="txtUsuario_KeyDown"/>
+        <PasswordBox x:Name="txtPassword"   HorizontalAlignment="Left" Margin="128,230,0,0" FontSize="28" VerticalAlignment="Top"
+                     Height="41" Width="243" TabIndex="2" KeyUp="txtPassword_KeyUp"  />
+        <!--<TextBox x:Name="txtPassword"   HorizontalAlignment="Left" Margin="209,239,0,0" FontSize="28" VerticalAlignment="Top"
+                     Height="41" Width="177" TabIndex="2" KeyDown="txtPassword_KeyDown" KeyUp="txtPassword_KeyUp"  />-->
+
+        <Button x:Name="btnAceptar" Content="Acceder" FontSize="25"  HorizontalAlignment="Left"   Margin="230,311,0,0" VerticalAlignment="Top" 
+                    Width="178" Click="btnAceptar_Click" Height="75" Background="#FF428BC9" Foreground="White" TabIndex="3" 
+                    BorderThickness="0" Cursor="Hand">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="#FF428BC9"/>
+            </Button.BorderBrush>
+        </Button>
+        <Button x:Name="btnCancelar" Content="Cancelar" FontSize="25" HorizontalAlignment="Left"   Margin="29,311,0,0" VerticalAlignment="Top"                 
+                Width="174" Click="btnCancelar_Click" Height="75" Background="#FF303338" Foreground="White" TabIndex="3" BorderThickness="0"                 
+                Cursor="Hand" BorderBrush="#FF428BC9"/>
+        <Label x:Name="lblHiddenPassword" Content="" Visibility="Hidden" HorizontalAlignment="Left" Margin="209,390,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.333,-0.106" Width="177"/>
+        <!--<ListBox x:Name="listBox" HorizontalAlignment="Left" FontSize="12" Height="164" Margin="309,10,0,0" VerticalAlignment="Top" Width="173"/>-->
+
+    </Grid>
+</Window>

@@ -1,0 +1,792 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="GuiaIngresoZona" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/Persistence.domain" />
+      <xs:element name="usp_LisGuiaIngresoZona">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="strEstado" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strFiltro" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strIdlocal" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strFechaInicio" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strFechaFin" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="usp_LisGuiaIngresoZonaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Persistence.domain" minOccurs="0" name="usp_LisGuiaIngresoZonaResult" nillable="true" type="q1:ArrayOfusp_LisGuiaIngresoZona_Result" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="usp_LisDatoGuiaIngresoZona">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="inIdGuiaIngreso" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="usp_LisDatoGuiaIngresoZonaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Persistence.domain" minOccurs="0" name="usp_LisDatoGuiaIngresoZonaResult" nillable="true" type="q2:ArrayOfusp_LisDatoGuiaIngresoZona_Result" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="usp_ReporteGuiaIngreso">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="strIdGuiaIngreso" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="usp_ReporteGuiaIngresoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Persistence.domain" minOccurs="0" name="usp_ReporteGuiaIngresoResult" nillable="true" type="q3:ArrayOfusp_ReporteGuiaIngreso_Result" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="usp_LisGuiaIngresoEditar">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="inIdGuia" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="usp_LisGuiaIngresoEditarResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Persistence.domain" minOccurs="0" name="usp_LisGuiaIngresoEditarResult" nillable="true" type="q4:ArrayOfusp_LisGuiaIngresoEditar_Result" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="usp_ListadoDetalleRemision">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="inIdTraslado" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="usp_ListadoDetalleRemisionResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Persistence.domain" minOccurs="0" name="usp_ListadoDetalleRemisionResult" nillable="true" type="q5:ArrayOfusp_ListadoDetalleRemision_Result" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="usp_LisGuiaIngresoDetalle">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="inIdGuia" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="usp_LisGuiaIngresoDetalleResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Persistence.domain" minOccurs="0" name="usp_LisGuiaIngresoDetalleResult" nillable="true" type="q6:ArrayOfusp_LisGuiaIngresoDetalle_Result" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="usp_ListIngresoSaldo">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="IdGuia" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="usp_ListIngresoSaldoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Persistence.domain" minOccurs="0" name="usp_ListIngresoSaldoResult" nillable="true" type="q7:ArrayOfusp_ListIngresoSaldo_Result" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="usp_LisRecepcionGuiaRemisionZona">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="strIdlocal" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="usp_LisRecepcionGuiaRemisionZonaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Persistence.domain" minOccurs="0" name="usp_LisRecepcionGuiaRemisionZonaResult" nillable="true" type="q8:ArrayOfusp_LisRecepcionGuiaRemisionZona_Result" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InsertarGuiaIngresoCompleto">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="inTipoOperacion" type="xs:int" />
+            <xs:element minOccurs="0" name="oGIC" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="oSLstDJson" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="oLstGIS" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InsertarGuiaIngresoCompletoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="InsertarGuiaIngresoCompletoResult" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ECab">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ECabResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Persistence.domain" minOccurs="0" name="ECabResult" nillable="true" type="q9:GUIA_INGRESO_CAB" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="EDet">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="EDetResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Persistence.domain" minOccurs="0" name="EDetResult" nillable="true" type="q10:GUIA_INGRESO_DET" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ESaldo">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ESaldoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Persistence.domain" minOccurs="0" name="ESaldoResult" nillable="true" type="q11:GUIA_INGRESO_SALDO" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Persistence.domain" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Persistence.domain" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="ArrayOfusp_LisGuiaIngresoZona_Result">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="usp_LisGuiaIngresoZona_Result" nillable="true" type="tns:usp_LisGuiaIngresoZona_Result" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfusp_LisGuiaIngresoZona_Result" nillable="true" type="tns:ArrayOfusp_LisGuiaIngresoZona_Result" />
+      <xs:complexType name="usp_LisGuiaIngresoZona_Result">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CALIDAD" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CLIENTE" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CONTACTOCLIENTE" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CONTRATOCOMPRA" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DESCCERTIFICACION" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DESCUSUARIOMODIFICA" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DESCUSUARIOREGISTRO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DIF_NETOYAGUA" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="ESTADO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FECHAMODIFICA" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FECHAREGISTRO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GUIAINGRESO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GUIAREMISIONEXTERNA" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IDCLIENTE" type="xs:int" />
+          <xs:element minOccurs="0" name="IDCONTACTOCLIENTE" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="IDCONTRATO" type="xs:int" />
+          <xs:element minOccurs="0" name="IDGUIA" type="xs:int" />
+          <xs:element minOccurs="0" name="IDLOCAL" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IDPROCESO" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="IMPRESION" type="xs:int" />
+          <xs:element minOccurs="0" name="IdCertificadoVSP" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IdTipoCaFe" type="xs:int" />
+          <xs:element minOccurs="0" name="LIQUIDACION" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MODALIDADINGRESO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OBSERVACION" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ORIGEN" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PROMEDIOHUMEDAD" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="PROMEDIORENDIMIENTO" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="PROMEDIOTAZA" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="PROPIEDAD" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProcesoDescripcion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RUMA" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RUMADESTINO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SS" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TOTALDSCTOAGUA" type="xs:decimal" />
+          <xs:element minOccurs="0" name="TOTALKGBRUTO" type="xs:decimal" />
+          <xs:element minOccurs="0" name="TOTALKGNETO" type="xs:decimal" />
+          <xs:element minOccurs="0" name="TOTALSACO" type="xs:int" />
+          <xs:element minOccurs="0" name="TOTALTARA" type="xs:decimal" />
+          <xs:element minOccurs="0" name="TRASLADO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TipoCafe" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="usp_LisGuiaIngresoZona_Result" nillable="true" type="tns:usp_LisGuiaIngresoZona_Result" />
+      <xs:complexType name="ArrayOfusp_LisDatoGuiaIngresoZona_Result">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="usp_LisDatoGuiaIngresoZona_Result" nillable="true" type="tns:usp_LisDatoGuiaIngresoZona_Result" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfusp_LisDatoGuiaIngresoZona_Result" nillable="true" type="tns:ArrayOfusp_LisDatoGuiaIngresoZona_Result" />
+      <xs:complexType name="usp_LisDatoGuiaIngresoZona_Result">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CALIDAD" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Documento" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="KGBRUTO" type="xs:decimal" />
+          <xs:element minOccurs="0" name="KGNETO" type="xs:decimal" />
+          <xs:element minOccurs="0" name="NROSACO" type="xs:int" />
+          <xs:element minOccurs="0" name="NUMERO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TARA" type="xs:decimal" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="usp_LisDatoGuiaIngresoZona_Result" nillable="true" type="tns:usp_LisDatoGuiaIngresoZona_Result" />
+      <xs:complexType name="ArrayOfusp_ReporteGuiaIngreso_Result">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="usp_ReporteGuiaIngreso_Result" nillable="true" type="tns:usp_ReporteGuiaIngreso_Result" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfusp_ReporteGuiaIngreso_Result" nillable="true" type="tns:ArrayOfusp_ReporteGuiaIngreso_Result" />
+      <xs:complexType name="usp_ReporteGuiaIngreso_Result">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CALIDAD" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CERTIFICADO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CLIENTE" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DESCUSUARIOREGISTRO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DIRECCIONFACTURA" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ESTADO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FECHAREGISTRO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FECHA_DOCUMENTO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GUIAREMISIONEXTERNA" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IDCLIENTE" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="IDGUIA" type="xs:int" />
+          <xs:element minOccurs="0" name="IDGUIAINGRESO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IDGUIAINGRESODETALLE" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="IDINGRESOPRP" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="IDLOCAL" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IDORDENSERVICIO" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="IDRESULTADO" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="IDTICKETPESADA" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="IDTIPOCAFE" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="KGBRUTO" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="KGNETO" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="LOCAL" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LOCAL_DIRECCION" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MODALIDADINGRESO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NROSACO" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="OBSERVACIONES" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ORIGEN" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="REFERENCIA" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RUMADESTINO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TARA" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="TIPO_CAFE" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TOTALDSCTOAGUA" type="xs:decimal" />
+          <xs:element minOccurs="0" name="TOTALKGBRUTO" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="TOTALKGNETO" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="TOTALSACO" type="xs:int" />
+          <xs:element minOccurs="0" name="TOTALTARA" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="TRASLADO" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="usp_ReporteGuiaIngreso_Result" nillable="true" type="tns:usp_ReporteGuiaIngreso_Result" />
+      <xs:complexType name="ArrayOfusp_LisGuiaIngresoEditar_Result">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="usp_LisGuiaIngresoEditar_Result" nillable="true" type="tns:usp_LisGuiaIngresoEditar_Result" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfusp_LisGuiaIngresoEditar_Result" nillable="true" type="tns:ArrayOfusp_LisGuiaIngresoEditar_Result" />
+      <xs:complexType name="usp_LisGuiaIngresoEditar_Result">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CLIENTE" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CONTACTO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="COSECHA" type="xs:int" />
+          <xs:element minOccurs="0" name="DESCCERTIFICACION" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GUIAREMISIONEXTERNA" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IDCERTIFICADOVSP" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IDCLIENTE" type="xs:int" />
+          <xs:element minOccurs="0" name="IDCONTACTOCLIENTE" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="IDCONTRATO" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="IDESTADO" type="xs:int" />
+          <xs:element minOccurs="0" name="IDGUIA" type="xs:int" />
+          <xs:element minOccurs="0" name="IDGUIAINGRESO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IDINGRESOPRP" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="IDLOCAL" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IDOFICINAORIGEN" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="IDPROCESO" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="IDTIPOCAFE" type="xs:int" />
+          <xs:element minOccurs="0" name="IDTRASLADO" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="IdDivision" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="MODALIDADINGRESO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OBSERVACION" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RUMADESTINO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TOTALDSCTOAGUA" type="xs:decimal" />
+          <xs:element minOccurs="0" name="TOTALKGBRUTO" type="xs:decimal" />
+          <xs:element minOccurs="0" name="TOTALKGNETO" type="xs:decimal" />
+          <xs:element minOccurs="0" name="TOTALSACO" type="xs:int" />
+          <xs:element minOccurs="0" name="TOTALTARA" type="xs:decimal" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="usp_LisGuiaIngresoEditar_Result" nillable="true" type="tns:usp_LisGuiaIngresoEditar_Result" />
+      <xs:complexType name="ArrayOfusp_ListadoDetalleRemision_Result">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="usp_ListadoDetalleRemision_Result" nillable="true" type="tns:usp_ListadoDetalleRemision_Result" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfusp_ListadoDetalleRemision_Result" nillable="true" type="tns:ArrayOfusp_ListadoDetalleRemision_Result" />
+      <xs:complexType name="usp_ListadoDetalleRemision_Result">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CERTIFICADO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CLIENTE" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GRKGBRUTO" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="GRKGNETO" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="GRSACO" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="GRTARA" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="IDCERTIFICADO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IDCLIENTE" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="IDRESULTADO" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="usp_ListadoDetalleRemision_Result" nillable="true" type="tns:usp_ListadoDetalleRemision_Result" />
+      <xs:complexType name="ArrayOfusp_LisGuiaIngresoDetalle_Result">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="usp_LisGuiaIngresoDetalle_Result" nillable="true" type="tns:usp_LisGuiaIngresoDetalle_Result" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfusp_LisGuiaIngresoDetalle_Result" nillable="true" type="tns:ArrayOfusp_LisGuiaIngresoDetalle_Result" />
+      <xs:complexType name="usp_LisGuiaIngresoDetalle_Result">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IdEstado" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="IdGuia" type="xs:int" />
+          <xs:element minOccurs="0" name="IdGuiaIngresoDetalle" type="xs:int" />
+          <xs:element minOccurs="0" name="IdOrdenServicio" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="IdResultado" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="IdSSAsignado" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="IdTicketPesada" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="KgBruto" type="xs:decimal" />
+          <xs:element minOccurs="0" name="KgNeto" type="xs:decimal" />
+          <xs:element minOccurs="0" name="NroSaco" type="xs:int" />
+          <xs:element minOccurs="0" name="Tara" type="xs:decimal" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="usp_LisGuiaIngresoDetalle_Result" nillable="true" type="tns:usp_LisGuiaIngresoDetalle_Result" />
+      <xs:complexType name="ArrayOfusp_ListIngresoSaldo_Result">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="usp_ListIngresoSaldo_Result" nillable="true" type="tns:usp_ListIngresoSaldo_Result" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfusp_ListIngresoSaldo_Result" nillable="true" type="tns:ArrayOfusp_ListIngresoSaldo_Result" />
+      <xs:complexType name="usp_ListIngresoSaldo_Result">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Cosecha" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="FechaRegistro" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="IdCliente" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="IdEstado" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="IdGuia" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="IdTicketPesada" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="IdTicketPesadaSaldo" type="xs:int" />
+          <xs:element minOccurs="0" name="KgBruto" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="KgBrutoOperacion" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="KgBrutoSaldo" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="KgNeto" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="KgNetoOperacion" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="KgNetoSaldo" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Saco" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="SacoOperacion" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="SacoSaldo" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Tara" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="TaraOperacion" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="TaraSaldo" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="UsuarioRegistro" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="usp_ListIngresoSaldo_Result" nillable="true" type="tns:usp_ListIngresoSaldo_Result" />
+      <xs:complexType name="ArrayOfusp_LisRecepcionGuiaRemisionZona_Result">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="usp_LisRecepcionGuiaRemisionZona_Result" nillable="true" type="tns:usp_LisRecepcionGuiaRemisionZona_Result" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfusp_LisRecepcionGuiaRemisionZona_Result" nillable="true" type="tns:ArrayOfusp_LisRecepcionGuiaRemisionZona_Result" />
+      <xs:complexType name="usp_LisRecepcionGuiaRemisionZona_Result">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FECHATRASLADO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GRHUMEDAD" type="xs:decimal" />
+          <xs:element minOccurs="0" name="GRKGBRUTO" type="xs:decimal" />
+          <xs:element minOccurs="0" name="GRRENDIMIENTO" type="xs:decimal" />
+          <xs:element minOccurs="0" name="GRSACO" type="xs:int" />
+          <xs:element minOccurs="0" name="IDTRASLADO" type="xs:int" />
+          <xs:element minOccurs="0" name="LOCAL" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TRASLADO" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="usp_LisRecepcionGuiaRemisionZona_Result" nillable="true" type="tns:usp_LisRecepcionGuiaRemisionZona_Result" />
+      <xs:complexType name="GUIA_INGRESO_CAB">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ChkLiquidacion" type="xs:int" />
+          <xs:element minOccurs="0" name="Cosecha" type="xs:int" />
+          <xs:element minOccurs="0" name="DescCertificacion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FechaModifica" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FechaRegistro" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="GuiaRemisionExterna" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IdCertificadoVSP" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IdCliente" type="xs:int" />
+          <xs:element minOccurs="0" name="IdClienteTrazabilidad" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="IdContactoCliente" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="IdContrato" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="IdDivision" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="IdEstado" type="xs:int" />
+          <xs:element minOccurs="0" name="IdGuia" type="xs:int" />
+          <xs:element minOccurs="0" name="IdGuiaIngreso" type="xs:int" />
+          <xs:element minOccurs="0" name="IdGuiaReferencia" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="IdIngresoPRP" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="IdLocal" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IdOficinaOrigen" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="IdProceso" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="IdProductor" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="IdSSAsignado" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="IdTipoCafe" type="xs:int" />
+          <xs:element minOccurs="0" name="IdTransito" type="xs:int" />
+          <xs:element minOccurs="0" name="IdTraslado" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="IdTrasladoFila" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Impresion" type="xs:int" />
+          <xs:element minOccurs="0" name="ModalidadIngreso" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Observacion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PromedioHumedad" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="PromedioRendimiento" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="PromedioTaza" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="RumaDestino" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TotalDsctoAgua" type="xs:decimal" />
+          <xs:element minOccurs="0" name="TotalKgBruto" type="xs:decimal" />
+          <xs:element minOccurs="0" name="TotalKgNeto" type="xs:decimal" />
+          <xs:element minOccurs="0" name="TotalSaco" type="xs:int" />
+          <xs:element minOccurs="0" name="TotalTara" type="xs:decimal" />
+          <xs:element minOccurs="0" name="UsuarioModifica" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UsuarioRegistro" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="GUIA_INGRESO_CAB" nillable="true" type="tns:GUIA_INGRESO_CAB" />
+      <xs:complexType name="GUIA_INGRESO_DET">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IdEstado" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="IdGuia" type="xs:int" />
+          <xs:element minOccurs="0" name="IdGuiaIngresoDetalle" type="xs:int" />
+          <xs:element minOccurs="0" name="IdOrdenServicio" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="IdResultado" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="IdSSAsignado" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="IdTicketPesada" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="KgBruto" type="xs:decimal" />
+          <xs:element minOccurs="0" name="KgNeto" type="xs:decimal" />
+          <xs:element minOccurs="0" name="NroSaco" type="xs:int" />
+          <xs:element minOccurs="0" name="Tara" type="xs:decimal" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="GUIA_INGRESO_DET" nillable="true" type="tns:GUIA_INGRESO_DET" />
+      <xs:complexType name="GUIA_INGRESO_SALDO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Cosecha" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="FechaRegistro" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="IdCliente" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="IdEstado" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="IdGuia" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="IdTicketPesada" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="IdTicketPesadaSaldo" type="xs:int" />
+          <xs:element minOccurs="0" name="KgBruto" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="KgBrutoOperacion" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="KgBrutoSaldo" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="KgNeto" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="KgNetoOperacion" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="KgNetoSaldo" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Saco" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="SacoOperacion" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="SacoSaldo" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Tara" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="TaraOperacion" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="TaraSaldo" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="UsuarioRegistro" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="GUIA_INGRESO_SALDO" nillable="true" type="tns:GUIA_INGRESO_SALDO" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="IGuiaIngresoZona_usp_LisGuiaIngresoZona_InputMessage">
+    <wsdl:part name="parameters" element="tns:usp_LisGuiaIngresoZona" />
+  </wsdl:message>
+  <wsdl:message name="IGuiaIngresoZona_usp_LisGuiaIngresoZona_OutputMessage">
+    <wsdl:part name="parameters" element="tns:usp_LisGuiaIngresoZonaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGuiaIngresoZona_usp_LisDatoGuiaIngresoZona_InputMessage">
+    <wsdl:part name="parameters" element="tns:usp_LisDatoGuiaIngresoZona" />
+  </wsdl:message>
+  <wsdl:message name="IGuiaIngresoZona_usp_LisDatoGuiaIngresoZona_OutputMessage">
+    <wsdl:part name="parameters" element="tns:usp_LisDatoGuiaIngresoZonaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGuiaIngresoZona_usp_ReporteGuiaIngreso_InputMessage">
+    <wsdl:part name="parameters" element="tns:usp_ReporteGuiaIngreso" />
+  </wsdl:message>
+  <wsdl:message name="IGuiaIngresoZona_usp_ReporteGuiaIngreso_OutputMessage">
+    <wsdl:part name="parameters" element="tns:usp_ReporteGuiaIngresoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGuiaIngresoZona_usp_LisGuiaIngresoEditar_InputMessage">
+    <wsdl:part name="parameters" element="tns:usp_LisGuiaIngresoEditar" />
+  </wsdl:message>
+  <wsdl:message name="IGuiaIngresoZona_usp_LisGuiaIngresoEditar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:usp_LisGuiaIngresoEditarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGuiaIngresoZona_usp_ListadoDetalleRemision_InputMessage">
+    <wsdl:part name="parameters" element="tns:usp_ListadoDetalleRemision" />
+  </wsdl:message>
+  <wsdl:message name="IGuiaIngresoZona_usp_ListadoDetalleRemision_OutputMessage">
+    <wsdl:part name="parameters" element="tns:usp_ListadoDetalleRemisionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGuiaIngresoZona_usp_LisGuiaIngresoDetalle_InputMessage">
+    <wsdl:part name="parameters" element="tns:usp_LisGuiaIngresoDetalle" />
+  </wsdl:message>
+  <wsdl:message name="IGuiaIngresoZona_usp_LisGuiaIngresoDetalle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:usp_LisGuiaIngresoDetalleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGuiaIngresoZona_usp_ListIngresoSaldo_InputMessage">
+    <wsdl:part name="parameters" element="tns:usp_ListIngresoSaldo" />
+  </wsdl:message>
+  <wsdl:message name="IGuiaIngresoZona_usp_ListIngresoSaldo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:usp_ListIngresoSaldoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGuiaIngresoZona_usp_LisRecepcionGuiaRemisionZona_InputMessage">
+    <wsdl:part name="parameters" element="tns:usp_LisRecepcionGuiaRemisionZona" />
+  </wsdl:message>
+  <wsdl:message name="IGuiaIngresoZona_usp_LisRecepcionGuiaRemisionZona_OutputMessage">
+    <wsdl:part name="parameters" element="tns:usp_LisRecepcionGuiaRemisionZonaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGuiaIngresoZona_InsertarGuiaIngresoCompleto_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarGuiaIngresoCompleto" />
+  </wsdl:message>
+  <wsdl:message name="IGuiaIngresoZona_InsertarGuiaIngresoCompleto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarGuiaIngresoCompletoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGuiaIngresoZona_ECab_InputMessage">
+    <wsdl:part name="parameters" element="tns:ECab" />
+  </wsdl:message>
+  <wsdl:message name="IGuiaIngresoZona_ECab_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ECabResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGuiaIngresoZona_EDet_InputMessage">
+    <wsdl:part name="parameters" element="tns:EDet" />
+  </wsdl:message>
+  <wsdl:message name="IGuiaIngresoZona_EDet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EDetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGuiaIngresoZona_ESaldo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ESaldo" />
+  </wsdl:message>
+  <wsdl:message name="IGuiaIngresoZona_ESaldo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ESaldoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IGuiaIngresoZona">
+    <wsdl:operation name="usp_LisGuiaIngresoZona">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGuiaIngresoZona/usp_LisGuiaIngresoZona" message="tns:IGuiaIngresoZona_usp_LisGuiaIngresoZona_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGuiaIngresoZona/usp_LisGuiaIngresoZonaResponse" message="tns:IGuiaIngresoZona_usp_LisGuiaIngresoZona_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="usp_LisDatoGuiaIngresoZona">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGuiaIngresoZona/usp_LisDatoGuiaIngresoZona" message="tns:IGuiaIngresoZona_usp_LisDatoGuiaIngresoZona_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGuiaIngresoZona/usp_LisDatoGuiaIngresoZonaResponse" message="tns:IGuiaIngresoZona_usp_LisDatoGuiaIngresoZona_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="usp_ReporteGuiaIngreso">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGuiaIngresoZona/usp_ReporteGuiaIngreso" message="tns:IGuiaIngresoZona_usp_ReporteGuiaIngreso_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGuiaIngresoZona/usp_ReporteGuiaIngresoResponse" message="tns:IGuiaIngresoZona_usp_ReporteGuiaIngreso_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="usp_LisGuiaIngresoEditar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGuiaIngresoZona/usp_LisGuiaIngresoEditar" message="tns:IGuiaIngresoZona_usp_LisGuiaIngresoEditar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGuiaIngresoZona/usp_LisGuiaIngresoEditarResponse" message="tns:IGuiaIngresoZona_usp_LisGuiaIngresoEditar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="usp_ListadoDetalleRemision">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGuiaIngresoZona/usp_ListadoDetalleRemision" message="tns:IGuiaIngresoZona_usp_ListadoDetalleRemision_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGuiaIngresoZona/usp_ListadoDetalleRemisionResponse" message="tns:IGuiaIngresoZona_usp_ListadoDetalleRemision_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="usp_LisGuiaIngresoDetalle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGuiaIngresoZona/usp_LisGuiaIngresoDetalle" message="tns:IGuiaIngresoZona_usp_LisGuiaIngresoDetalle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGuiaIngresoZona/usp_LisGuiaIngresoDetalleResponse" message="tns:IGuiaIngresoZona_usp_LisGuiaIngresoDetalle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="usp_ListIngresoSaldo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGuiaIngresoZona/usp_ListIngresoSaldo" message="tns:IGuiaIngresoZona_usp_ListIngresoSaldo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGuiaIngresoZona/usp_ListIngresoSaldoResponse" message="tns:IGuiaIngresoZona_usp_ListIngresoSaldo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="usp_LisRecepcionGuiaRemisionZona">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGuiaIngresoZona/usp_LisRecepcionGuiaRemisionZona" message="tns:IGuiaIngresoZona_usp_LisRecepcionGuiaRemisionZona_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGuiaIngresoZona/usp_LisRecepcionGuiaRemisionZonaResponse" message="tns:IGuiaIngresoZona_usp_LisRecepcionGuiaRemisionZona_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarGuiaIngresoCompleto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGuiaIngresoZona/InsertarGuiaIngresoCompleto" message="tns:IGuiaIngresoZona_InsertarGuiaIngresoCompleto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGuiaIngresoZona/InsertarGuiaIngresoCompletoResponse" message="tns:IGuiaIngresoZona_InsertarGuiaIngresoCompleto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ECab">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGuiaIngresoZona/ECab" message="tns:IGuiaIngresoZona_ECab_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGuiaIngresoZona/ECabResponse" message="tns:IGuiaIngresoZona_ECab_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EDet">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGuiaIngresoZona/EDet" message="tns:IGuiaIngresoZona_EDet_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGuiaIngresoZona/EDetResponse" message="tns:IGuiaIngresoZona_EDet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ESaldo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGuiaIngresoZona/ESaldo" message="tns:IGuiaIngresoZona_ESaldo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGuiaIngresoZona/ESaldoResponse" message="tns:IGuiaIngresoZona_ESaldo_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IGuiaIngresoZona" type="tns:IGuiaIngresoZona">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="usp_LisGuiaIngresoZona">
+      <soap:operation soapAction="http://tempuri.org/IGuiaIngresoZona/usp_LisGuiaIngresoZona" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="usp_LisDatoGuiaIngresoZona">
+      <soap:operation soapAction="http://tempuri.org/IGuiaIngresoZona/usp_LisDatoGuiaIngresoZona" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="usp_ReporteGuiaIngreso">
+      <soap:operation soapAction="http://tempuri.org/IGuiaIngresoZona/usp_ReporteGuiaIngreso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="usp_LisGuiaIngresoEditar">
+      <soap:operation soapAction="http://tempuri.org/IGuiaIngresoZona/usp_LisGuiaIngresoEditar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="usp_ListadoDetalleRemision">
+      <soap:operation soapAction="http://tempuri.org/IGuiaIngresoZona/usp_ListadoDetalleRemision" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="usp_LisGuiaIngresoDetalle">
+      <soap:operation soapAction="http://tempuri.org/IGuiaIngresoZona/usp_LisGuiaIngresoDetalle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="usp_ListIngresoSaldo">
+      <soap:operation soapAction="http://tempuri.org/IGuiaIngresoZona/usp_ListIngresoSaldo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="usp_LisRecepcionGuiaRemisionZona">
+      <soap:operation soapAction="http://tempuri.org/IGuiaIngresoZona/usp_LisRecepcionGuiaRemisionZona" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarGuiaIngresoCompleto">
+      <soap:operation soapAction="http://tempuri.org/IGuiaIngresoZona/InsertarGuiaIngresoCompleto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ECab">
+      <soap:operation soapAction="http://tempuri.org/IGuiaIngresoZona/ECab" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EDet">
+      <soap:operation soapAction="http://tempuri.org/IGuiaIngresoZona/EDet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ESaldo">
+      <soap:operation soapAction="http://tempuri.org/IGuiaIngresoZona/ESaldo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GuiaIngresoZona">
+    <wsdl:port name="BasicHttpBinding_IGuiaIngresoZona" binding="tns:BasicHttpBinding_IGuiaIngresoZona">
+      <soap:address location="http://192.168.51.88/WCF/SGOTouch/Services/GuiaIngresoZona.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

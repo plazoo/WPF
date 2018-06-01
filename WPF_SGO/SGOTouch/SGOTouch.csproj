@@ -1,0 +1,685 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5DC52693-EB13-4E3C-AFD9-A67CA7F6C0CE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SGOTouch</RootNamespace>
+    <AssemblyName>SGOTouch</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>D:\Desarrollo\publish\01\servidor\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>http://192.168.51.88/SGOTouch/</InstallUrl>
+    <UpdateUrl>http://192.168.51.88/SGOTouch/</UpdateUrl>
+    <TargetCulture>es-PE</TargetCulture>
+    <ProductName>SGOTouch</ProductName>
+    <PublisherName>Pedro Lazo</PublisherName>
+    <SuiteName>SGO</SuiteName>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>6</ApplicationRevision>
+    <ApplicationVersion>1.0.1.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>2FA523DCD0BD1E1E23FA4CAF0CC8EE47DEC10A48</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>SGOUi_ClaveTemporal.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Asset\images\coffee_beam_20595.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ControlzEx, Version=3.0.2.4, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ControlzEx.3.0.2.4\lib\net45\ControlzEx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MahApps.Metro, Version=1.6.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.1.6.4\lib\net45\MahApps.Metro.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\ControlzEx.3.0.2.4\lib\net45\System.Windows.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Presentation" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIShell.NavigationService, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UIShell.NavigationService.1.0.0\lib\net40\UIShell.NavigationService.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Helpers\Helper.cs" />
+    <Compile Include="Index.xaml.cs">
+      <DependentUpon>Index.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Menus\ucMenuNavegacion.xaml.cs">
+      <DependentUpon>ucMenuNavegacion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Menus\ucMenuPrincipal.xaml.cs">
+      <DependentUpon>ucMenuPrincipal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Menus\ucMenuSegundarioGI.xaml.cs">
+      <DependentUpon>ucMenuSegundarioGI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Menus\ucMenuSegundarioTicketPesada.xaml.cs">
+      <DependentUpon>ucMenuSegundarioTicketPesada.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OperacionesZona\ucListarGI.xaml.cs">
+      <DependentUpon>ucListarGI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OperacionesZona\ucListarTicketPesada.xaml.cs">
+      <DependentUpon>ucListarTicketPesada.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OperacionesZona\ucRegistrarGI.xaml.cs">
+      <DependentUpon>ucRegistrarGI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OperacionesZona\ucRegistrarTicket.xaml.cs">
+      <DependentUpon>ucRegistrarTicket.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte\Dataset\dsGuiaIngresoZona.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsGuiaIngresoZona.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte\Dataset\dsTicket.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsTicket.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte\Reporte.xaml.cs">
+      <DependentUpon>Reporte.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceCertificadoVSP\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceCliente\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceGuiaIngresoZona\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceSolicitudServicio\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceTablaGeneral\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceTicketPesada\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceUsuario\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="UseControl\ucDialog.xaml.cs">
+      <DependentUpon>ucDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UseControl\WinCertificados.xaml.cs">
+      <DependentUpon>WinCertificados.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UseControl\WinCliente.xaml.cs">
+      <DependentUpon>WinCliente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UseControl\WinListGIIngresoPRP.xaml.cs">
+      <DependentUpon>WinListGIIngresoPRP.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Index.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Menus\ucMenuNavegacion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Menus\ucMenuPrincipal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Menus\ucMenuSegundarioGI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Menus\ucMenuSegundarioTicketPesada.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OperacionesZona\ucListarGI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OperacionesZona\ucListarTicketPesada.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OperacionesZona\ucRegistrarGI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OperacionesZona\ucRegistrarTicket.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Reporte\Reporte.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UseControl\ucDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UseControl\WinCertificados.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UseControl\WinCliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UseControl\WinListGIIngresoPRP.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Service References\ServiceCertificadoVSP\CertificadoVSP.wsdl" />
+    <None Include="Service References\ServiceCertificadoVSP\SGOTouch.ServiceCertificadoVSP.usp_LisSaldoCertificado_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceCliente\Cliente.wsdl" />
+    <None Include="Service References\ServiceCliente\SGOTouch.ServiceCliente.LisClienteContacto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceGuiaIngresoZona\GuiaIngresoZona.wsdl" />
+    <None Include="Service References\ServiceGuiaIngresoZona\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ServiceGuiaIngresoZona\configuration.svcinfo" />
+    <None Include="Service References\ServiceGuiaIngresoZona\configuration91.svcinfo" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Content Include="Asset\images\coffee_beam_20595.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Service References\ServiceGuiaIngresoZona\SGOTouch.ServiceGuiaIngresoZona.GUIA_INGRESO_CAB.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceGuiaIngresoZona\SGOTouch.ServiceGuiaIngresoZona.GUIA_INGRESO_DET.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceGuiaIngresoZona\SGOTouch.ServiceGuiaIngresoZona.GUIA_INGRESO_SALDO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceGuiaIngresoZona\SGOTouch.ServiceGuiaIngresoZona.usp_LisDatoGuiaIngresoZona_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceGuiaIngresoZona\SGOTouch.ServiceGuiaIngresoZona.usp_LisGuiaIngresoDetalle_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceGuiaIngresoZona\SGOTouch.ServiceGuiaIngresoZona.usp_LisGuiaIngresoEditar_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceGuiaIngresoZona\SGOTouch.ServiceGuiaIngresoZona.usp_LisGuiaIngresoZona_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceGuiaIngresoZona\SGOTouch.ServiceGuiaIngresoZona.usp_LisRecepcionGuiaRemisionZona_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceGuiaIngresoZona\SGOTouch.ServiceGuiaIngresoZona.usp_ListadoDetalleRemision_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceGuiaIngresoZona\SGOTouch.ServiceGuiaIngresoZona.usp_ListIngresoSaldo_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceGuiaIngresoZona\SGOTouch.ServiceGuiaIngresoZona.usp_ReporteGuiaIngreso_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceSolicitudServicio\SGOTouch.ServiceSolicitudServicio.usp_LisTickedPesadaEnProceso_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceSolicitudServicio\SolicitudServicio.wsdl" />
+    <None Include="Service References\ServiceTablaGeneral\SGOTouch.ServiceTablaGeneral.SelLocalIdEmpresaUsuario.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceTablaGeneral\SGOTouch.ServiceTablaGeneral.usp_LisBusquedaClienteFiltro_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceTablaGeneral\SGOTouch.ServiceTablaGeneral.usp_LisComboSacoCafe_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceTablaGeneral\SGOTouch.ServiceTablaGeneral.usp_LisContratoConGI_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceTablaGeneral\SGOTouch.ServiceTablaGeneral.usp_LisLaboratorioDisponibleXCliente_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceTablaGeneral\SGOTouch.ServiceTablaGeneral.usp_LisTipoCafe_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceTablaGeneral\SGOTouch.ServiceTablaGeneral.usp_LisTipoRuma_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceTablaGeneral\SGOTouch.ServiceTablaGeneral.usp_Mant_CLIENTE_COSECHA_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceTablaGeneral\SGOTouch.ServiceTablaGeneral.usp_Mant_TIPO_COSECHA_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceTablaGeneral\TablaGeneral.wsdl" />
+    <None Include="Service References\ServiceTicketPesada\SGOTouch.ServiceTicketPesada.ComprobanteCliente.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceTicketPesada\SGOTouch.ServiceTicketPesada.usp_LisTicketPesada_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceTicketPesada\SGOTouch.ServiceTicketPesada.usp_ReporteTicketPesada_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceTicketPesada\TicketPesada.wsdl" />
+    <None Include="Service References\ServiceUsuario\SGOTouch.ServiceUsuario.Usuario.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceUsuario\UsuarioService.wsdl" />
+    <Resource Include="Manifest.xml" />
+    <Resource Include="ExtensionModel\ExtensionDefinition.xml" />
+    <Resource Include="Asset\images\iconos\ic_print.png" />
+    <Resource Include="Asset\images\iconos\disquette.png" />
+    <Resource Include="Asset\images\iconos\printer.png" />
+    <Resource Include="Asset\images\iconos\file.png" />
+    <Resource Include="Asset\images\iconos\research.png" />
+    <Resource Include="Asset\images\fondos\fondo1.jpg" />
+    <Resource Include="Asset\images\fondos\fondo2.jpg" />
+    <Resource Include="Asset\images\fondos\fondo3.jpg" />
+    <Resource Include="Asset\images\fondos\fondo4.jpg" />
+    <Resource Include="Asset\images\iconos\ic_search_clie.png" />
+    <Resource Include="Asset\images\iconos\ic_search_clie2.png" />
+    <Resource Include="Asset\images\iconos\save.png" />
+    <Content Include="Reporte\ReportViewer\rptFormGuiaIngresoZona.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reporte\ReportViewer\rptFormTicketPesada.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="Reporte\Dataset\dsGuiaIngresoZona.xsc">
+      <DependentUpon>dsGuiaIngresoZona.xsd</DependentUpon>
+    </None>
+    <None Include="Reporte\Dataset\dsGuiaIngresoZona.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsGuiaIngresoZona.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reporte\Dataset\dsGuiaIngresoZona.xss">
+      <DependentUpon>dsGuiaIngresoZona.xsd</DependentUpon>
+    </None>
+    <None Include="Reporte\Dataset\dsTicket.xsc">
+      <DependentUpon>dsTicket.xsd</DependentUpon>
+    </None>
+    <None Include="Reporte\Dataset\dsTicket.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsTicket.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reporte\Dataset\dsTicket.xss">
+      <DependentUpon>dsTicket.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Asset\css\" />
+    <Folder Include="Asset\js\" />
+    <Folder Include="Asset\lib\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset\images\log.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SGOUtil\SGOUtil.csproj">
+      <Project>{14c85700-e1d1-4a3b-b132-ec034fb07389}</Project>
+      <Name>SGOUtil</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset\images\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset\images\password.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset\images\iconos\ic_accept.png" />
+    <Resource Include="Asset\images\iconos\ic_accept2.png" />
+    <Resource Include="Asset\images\iconos\ic_add.png" />
+    <Resource Include="Asset\images\iconos\ic_cancel.png" />
+    <Resource Include="Asset\images\iconos\ic_cancel2.png" />
+    <Resource Include="Asset\images\iconos\ic_check.png" />
+    <Resource Include="Asset\images\iconos\ic_clear.png" />
+    <Resource Include="Asset\images\iconos\ic_clone.gif" />
+    <Resource Include="Asset\images\iconos\ic_componente.gif" />
+    <Resource Include="Asset\images\iconos\ic_delete.gif" />
+    <Resource Include="Asset\images\iconos\ic_delete.png" />
+    <Resource Include="Asset\images\iconos\ic_edit.png" />
+    <Resource Include="Asset\images\iconos\ic_Email.png" />
+    <Resource Include="Asset\images\iconos\ic_exit.png" />
+    <Resource Include="Asset\images\iconos\ic_find.png" />
+    <Resource Include="Asset\images\iconos\ic_general.png" />
+    <Resource Include="Asset\images\iconos\ic_host.png" />
+    <Resource Include="Asset\images\iconos\ic_info.gif" />
+    <Resource Include="Asset\images\iconos\ic_infotab.png" />
+    <Resource Include="Asset\images\iconos\ic_item.gif" />
+    <Resource Include="Asset\images\iconos\ic_login.gif" />
+    <Resource Include="Asset\images\iconos\ic_menu.png" />
+    <Resource Include="Asset\images\iconos\ic_move.png" />
+    <Resource Include="Asset\images\iconos\ic_new.png" />
+    <Resource Include="Asset\images\iconos\ic_nocheck.png" />
+    <Resource Include="Asset\images\iconos\ic_pendiente.gif" />
+    <Resource Include="Asset\images\iconos\ic_save.png" />
+    <Resource Include="Asset\images\iconos\ic_upimage.png" />
+    <Resource Include="Asset\images\iconos\ic_user.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset\images\portapapeles.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset\images\lista-de-verificacion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset\images\diploma.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ServiceCertificadoVSP\" />
+    <WCFMetadataStorage Include="Service References\ServiceCliente\" />
+    <WCFMetadataStorage Include="Service References\ServiceGuiaIngresoZona\" />
+    <WCFMetadataStorage Include="Service References\ServiceSolicitudServicio\" />
+    <WCFMetadataStorage Include="Service References\ServiceTablaGeneral\" />
+    <WCFMetadataStorage Include="Service References\ServiceTicketPesada\" />
+    <WCFMetadataStorage Include="Service References\ServiceUsuario\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceUsuario\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceUsuario\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceUsuario\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset\images\volcafeSpeciality.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset\images\volcafe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset\images\edfmanLogo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceTicketPesada\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceTicketPesada\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceTicketPesada\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceCertificadoVSP\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceCertificadoVSP\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceCertificadoVSP\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceCliente\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceCliente\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceCliente\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceSolicitudServicio\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceSolicitudServicio\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceSolicitudServicio\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceTablaGeneral\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceTablaGeneral\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceTablaGeneral\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="Microsoft.ReportViewer.Common">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.DataVisualization">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.ProcessingObjectModel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

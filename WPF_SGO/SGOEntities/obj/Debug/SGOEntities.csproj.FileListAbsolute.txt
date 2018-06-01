@@ -1,0 +1,5 @@
+D:\Desarrollo\WPF_SGO\SGOEntities\bin\Debug\SGOEntities.dll
+D:\Desarrollo\WPF_SGO\SGOEntities\bin\Debug\SGOEntities.pdb
+D:\Desarrollo\WPF_SGO\SGOEntities\obj\Debug\SGOEntities.dll
+D:\Desarrollo\WPF_SGO\SGOEntities\obj\Debug\SGOEntities.pdb
+D:\Desarrollo\WPF_SGO\SGOEntities\obj\Debug\SGOEntities.csprojResolveAssemblyReference.cache

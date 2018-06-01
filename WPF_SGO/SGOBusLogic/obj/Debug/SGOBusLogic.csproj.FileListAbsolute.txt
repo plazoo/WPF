@@ -1,0 +1,11 @@
+D:\Desarrollo\WPF_SGO\SGOBusLogic\bin\Debug\SGOBusLogic.dll
+D:\Desarrollo\WPF_SGO\SGOBusLogic\bin\Debug\SGOBusLogic.pdb
+D:\Desarrollo\WPF_SGO\SGOBusLogic\bin\Debug\SGODataAccess.dll
+D:\Desarrollo\WPF_SGO\SGOBusLogic\bin\Debug\SGOEntities.dll
+D:\Desarrollo\WPF_SGO\SGOBusLogic\bin\Debug\SGOUtil.dll
+D:\Desarrollo\WPF_SGO\SGOBusLogic\bin\Debug\SGODataAccess.pdb
+D:\Desarrollo\WPF_SGO\SGOBusLogic\bin\Debug\SGOEntities.pdb
+D:\Desarrollo\WPF_SGO\SGOBusLogic\bin\Debug\SGOUtil.pdb
+D:\Desarrollo\WPF_SGO\SGOBusLogic\obj\Debug\SGOBusLogic.csprojResolveAssemblyReference.cache
+D:\Desarrollo\WPF_SGO\SGOBusLogic\obj\Debug\SGOBusLogic.dll
+D:\Desarrollo\WPF_SGO\SGOBusLogic\obj\Debug\SGOBusLogic.pdb

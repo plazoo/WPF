@@ -1,0 +1,5 @@
+D:\Desarrollo\WPF_SGO\SGOUtil\bin\Debug\SGOUtil.dll
+D:\Desarrollo\WPF_SGO\SGOUtil\bin\Debug\SGOUtil.pdb
+D:\Desarrollo\WPF_SGO\SGOUtil\obj\Debug\SGOUtil.csprojResolveAssemblyReference.cache
+D:\Desarrollo\WPF_SGO\SGOUtil\obj\Debug\SGOUtil.dll
+D:\Desarrollo\WPF_SGO\SGOUtil\obj\Debug\SGOUtil.pdb

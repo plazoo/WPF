@@ -1,0 +1,9 @@
+D:\Desarrollo\WPF_SGO\SGODataAccess\bin\Debug\SGODataAccess.dll
+D:\Desarrollo\WPF_SGO\SGODataAccess\bin\Debug\SGODataAccess.pdb
+D:\Desarrollo\WPF_SGO\SGODataAccess\bin\Debug\SGOEntities.dll
+D:\Desarrollo\WPF_SGO\SGODataAccess\bin\Debug\SGOUtil.dll
+D:\Desarrollo\WPF_SGO\SGODataAccess\bin\Debug\SGOEntities.pdb
+D:\Desarrollo\WPF_SGO\SGODataAccess\bin\Debug\SGOUtil.pdb
+D:\Desarrollo\WPF_SGO\SGODataAccess\obj\Debug\SGODataAccess.csprojResolveAssemblyReference.cache
+D:\Desarrollo\WPF_SGO\SGODataAccess\obj\Debug\SGODataAccess.dll
+D:\Desarrollo\WPF_SGO\SGODataAccess\obj\Debug\SGODataAccess.pdb

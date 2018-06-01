@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="TablaGeneral" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/Persistence.domain" />
+      <xs:element name="usp_SelLocalIdEmpresaUsuario">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="IdEmpresa" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="IdUsuario" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="usp_SelLocalIdEmpresaUsuarioResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Persistence.domain" minOccurs="0" name="usp_SelLocalIdEmpresaUsuarioResult" nillable="true" type="q1:ArrayOfSelLocalIdEmpresaUsuario" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="usp_Mant_TIPO_COSECHA">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="bus" type="xs:int" />
+            <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Persistence.domain" minOccurs="0" name="oP" nillable="true" type="q2:TIPO_COSECHA" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="usp_Mant_TIPO_COSECHAResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Persistence.domain" minOccurs="0" name="usp_Mant_TIPO_COSECHAResult" nillable="true" type="q3:ArrayOfusp_Mant_TIPO_COSECHA_Result" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="usp_Mant_CLIENTE_COSECHA">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="bus" type="xs:int" />
+            <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Persistence.domain" minOccurs="0" name="oP" nillable="true" type="q4:CLIENTE_COSECHA" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="usp_Mant_CLIENTE_COSECHAResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Persistence.domain" minOccurs="0" name="usp_Mant_CLIENTE_COSECHAResult" nillable="true" type="q5:ArrayOfusp_Mant_CLIENTE_COSECHA_Result" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="usp_LisTipoCafe">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="strEstado" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="usp_LisTipoCafeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Persistence.domain" minOccurs="0" name="usp_LisTipoCafeResult" nillable="true" type="q6:ArrayOfusp_LisTipoCafe_Result" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="usp_LisComboSacoCafe">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="strEstado" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="usp_LisComboSacoCafeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Persistence.domain" minOccurs="0" name="usp_LisComboSacoCafeResult" nillable="true" type="q7:ArrayOfusp_LisComboSacoCafe_Result" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="usp_LisLaboratorioDisponibleXCliente">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="inIdCliente" type="xs:int" />
+            <xs:element minOccurs="0" name="strIdLocal" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="usp_LisLaboratorioDisponibleXClienteResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Persistence.domain" minOccurs="0" name="usp_LisLaboratorioDisponibleXClienteResult" nillable="true" type="q8:ArrayOfusp_LisLaboratorioDisponibleXCliente_Result" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="usp_LisTipoRuma">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="strIdLocal" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strIdEstado" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="usp_LisTipoRumaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Persistence.domain" minOccurs="0" name="usp_LisTipoRumaResult" nillable="true" type="q9:ArrayOfusp_LisTipoRuma_Result" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="usp_LisBusquedaClienteFiltro">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="strFiltro" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="usp_LisBusquedaClienteFiltroResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Persistence.domain" minOccurs="0" name="usp_LisBusquedaClienteFiltroResult" nillable="true" type="q10:ArrayOfusp_LisBusquedaClienteFiltro_Result" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="usp_LisContratoConGI">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="inIdCliente" type="xs:int" />
+            <xs:element minOccurs="0" name="inCosecha" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="usp_LisContratoConGIResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Persistence.domain" minOccurs="0" name="usp_LisContratoConGIResult" nillable="true" type="q11:ArrayOfusp_LisContratoConGI_Result" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Persistence.domain" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Persistence.domain" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="ArrayOfSelLocalIdEmpresaUsuario">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="SelLocalIdEmpresaUsuario" nillable="true" type="tns:SelLocalIdEmpresaUsuario" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfSelLocalIdEmpresaUsuario" nillable="true" type="tns:ArrayOfSelLocalIdEmpresaUsuario" />
+      <xs:complexType name="SelLocalIdEmpresaUsuario">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IdEmpresa" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="idLocal" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="nEstado" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="vDescripcion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="vDireccion" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="SelLocalIdEmpresaUsuario" nillable="true" type="tns:SelLocalIdEmpresaUsuario" />
+      <xs:complexType name="TIPO_COSECHA">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FechaModifica" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FechaRegistro" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="IdCosecha" type="xs:int" />
+          <xs:element minOccurs="0" name="IdEstado" type="xs:int" />
+          <xs:element minOccurs="0" name="UsuarioModifica" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="UsuarioRegistro" type="xs:int" />
+          <xs:element minOccurs="0" name="vcComentario" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="vcCosecha" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="TIPO_COSECHA" nillable="true" type="tns:TIPO_COSECHA" />
+      <xs:complexType name="ArrayOfusp_Mant_TIPO_COSECHA_Result">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="usp_Mant_TIPO_COSECHA_Result" nillable="true" type="tns:usp_Mant_TIPO_COSECHA_Result" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfusp_Mant_TIPO_COSECHA_Result" nillable="true" type="tns:ArrayOfusp_Mant_TIPO_COSECHA_Result" />
+      <xs:complexType name="usp_Mant_TIPO_COSECHA_Result">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="COMENTARIO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DESCRIPCION" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FechaRegistro" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="IdCosecha" type="xs:int" />
+          <xs:element minOccurs="0" name="IdEstado" type="xs:int" />
+          <xs:element minOccurs="0" name="UsuarioRegistro" type="xs:int" />
+          <xs:element minOccurs="0" name="VUSUARIO" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="usp_Mant_TIPO_COSECHA_Result" nillable="true" type="tns:usp_Mant_TIPO_COSECHA_Result" />
+      <xs:complexType name="CLIENTE_COSECHA">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FechaModifica" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FechaRegistro" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="IdCliente" type="xs:int" />
+          <xs:element minOccurs="0" name="IdClienteCosecha" type="xs:int" />
+          <xs:element minOccurs="0" name="IdCosecha" type="xs:int" />
+          <xs:element minOccurs="0" name="InEstado" type="xs:int" />
+          <xs:element minOccurs="0" name="InVigente" type="xs:int" />
+          <xs:element minOccurs="0" name="UsuarioModifica" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="UsuarioRegistro" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="CLIENTE_COSECHA" nillable="true" type="tns:CLIENTE_COSECHA" />
+      <xs:complexType name="ArrayOfusp_Mant_CLIENTE_COSECHA_Result">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="usp_Mant_CLIENTE_COSECHA_Result" nillable="true" type="tns:usp_Mant_CLIENTE_COSECHA_Result" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfusp_Mant_CLIENTE_COSECHA_Result" nillable="true" type="tns:ArrayOfusp_Mant_CLIENTE_COSECHA_Result" />
+      <xs:complexType name="usp_Mant_CLIENTE_COSECHA_Result">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CLIENTE" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DESCRIPCION" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DocIdentidad" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FechaRegistro" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="IdCliente" type="xs:int" />
+          <xs:element minOccurs="0" name="IdClienteCosecha" type="xs:int" />
+          <xs:element minOccurs="0" name="IdCosecha" type="xs:int" />
+          <xs:element minOccurs="0" name="IdTipoCliente" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="InEstado" type="xs:int" />
+          <xs:element minOccurs="0" name="InVigente" type="xs:int" />
+          <xs:element minOccurs="0" name="TIPO_CLIENTE" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UsuarioRegistro" type="xs:int" />
+          <xs:element minOccurs="0" name="VUSUARIO" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="usp_Mant_CLIENTE_COSECHA_Result" nillable="true" type="tns:usp_Mant_CLIENTE_COSECHA_Result" />
+      <xs:complexType name="ArrayOfusp_LisTipoCafe_Result">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="usp_LisTipoCafe_Result" nillable="true" type="tns:usp_LisTipoCafe_Result" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfusp_LisTipoCafe_Result" nillable="true" type="tns:ArrayOfusp_LisTipoCafe_Result" />
+      <xs:complexType name="usp_LisTipoCafe_Result">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DESCRIPCION" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FECHAREGISTRO" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="IDESTADO" type="xs:int" />
+          <xs:element minOccurs="0" name="IDTIPOCAFE" type="xs:int" />
+          <xs:element minOccurs="0" name="VUSUARIO" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="usp_LisTipoCafe_Result" nillable="true" type="tns:usp_LisTipoCafe_Result" />
+      <xs:complexType name="ArrayOfusp_LisComboSacoCafe_Result">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="usp_LisComboSacoCafe_Result" nillable="true" type="tns:usp_LisComboSacoCafe_Result" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfusp_LisComboSacoCafe_Result" nillable="true" type="tns:ArrayOfusp_LisComboSacoCafe_Result" />
+      <xs:complexType name="usp_LisComboSacoCafe_Result">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CODIGO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DESCRIPCION" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="usp_LisComboSacoCafe_Result" nillable="true" type="tns:usp_LisComboSacoCafe_Result" />
+      <xs:complexType name="ArrayOfusp_LisLaboratorioDisponibleXCliente_Result">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="usp_LisLaboratorioDisponibleXCliente_Result" nillable="true" type="tns:usp_LisLaboratorioDisponibleXCliente_Result" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfusp_LisLaboratorioDisponibleXCliente_Result" nillable="true" type="tns:ArrayOfusp_LisLaboratorioDisponibleXCliente_Result" />
+      <xs:complexType name="usp_LisLaboratorioDisponibleXCliente_Result">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodigoLaboratorio" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IdLaboratorio" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="usp_LisLaboratorioDisponibleXCliente_Result" nillable="true" type="tns:usp_LisLaboratorioDisponibleXCliente_Result" />
+      <xs:complexType name="ArrayOfusp_LisTipoRuma_Result">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="usp_LisTipoRuma_Result" nillable="true" type="tns:usp_LisTipoRuma_Result" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfusp_LisTipoRuma_Result" nillable="true" type="tns:ArrayOfusp_LisTipoRuma_Result" />
+      <xs:complexType name="usp_LisTipoRuma_Result">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DESCRIPCION" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FECHAREGISTRO" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="IDESTADO" type="xs:int" />
+          <xs:element minOccurs="0" name="IDTIPORUMA" type="xs:int" />
+          <xs:element minOccurs="0" name="VUSUARIO" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="usp_LisTipoRuma_Result" nillable="true" type="tns:usp_LisTipoRuma_Result" />
+      <xs:complexType name="ArrayOfusp_LisBusquedaClienteFiltro_Result">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="usp_LisBusquedaClienteFiltro_Result" nillable="true" type="tns:usp_LisBusquedaClienteFiltro_Result" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfusp_LisBusquedaClienteFiltro_Result" nillable="true" type="tns:ArrayOfusp_LisBusquedaClienteFiltro_Result" />
+      <xs:complexType name="usp_LisBusquedaClienteFiltro_Result">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CLIENTE" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DEPARTAMENTO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DISTRITO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DOCIDENTIDAD" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IDCLIENTE" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IDCLIENTESGO" type="xs:int" />
+          <xs:element minOccurs="0" name="IDEXCEL" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PROVINCIA" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TIPO_DOCUMENTO" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="usp_LisBusquedaClienteFiltro_Result" nillable="true" type="tns:usp_LisBusquedaClienteFiltro_Result" />
+      <xs:complexType name="ArrayOfusp_LisContratoConGI_Result">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="usp_LisContratoConGI_Result" nillable="true" type="tns:usp_LisContratoConGI_Result" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfusp_LisContratoConGI_Result" nillable="true" type="tns:ArrayOfusp_LisContratoConGI_Result" />
+      <xs:complexType name="usp_LisContratoConGI_Result">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="COMBO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IDCONTRATO" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="usp_LisContratoConGI_Result" nillable="true" type="tns:usp_LisContratoConGI_Result" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="ITablaGeneral_usp_SelLocalIdEmpresaUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:usp_SelLocalIdEmpresaUsuario" />
+  </wsdl:message>
+  <wsdl:message name="ITablaGeneral_usp_SelLocalIdEmpresaUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:usp_SelLocalIdEmpresaUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITablaGeneral_usp_Mant_TIPO_COSECHA_InputMessage">
+    <wsdl:part name="parameters" element="tns:usp_Mant_TIPO_COSECHA" />
+  </wsdl:message>
+  <wsdl:message name="ITablaGeneral_usp_Mant_TIPO_COSECHA_OutputMessage">
+    <wsdl:part name="parameters" element="tns:usp_Mant_TIPO_COSECHAResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITablaGeneral_usp_Mant_CLIENTE_COSECHA_InputMessage">
+    <wsdl:part name="parameters" element="tns:usp_Mant_CLIENTE_COSECHA" />
+  </wsdl:message>
+  <wsdl:message name="ITablaGeneral_usp_Mant_CLIENTE_COSECHA_OutputMessage">
+    <wsdl:part name="parameters" element="tns:usp_Mant_CLIENTE_COSECHAResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITablaGeneral_usp_LisTipoCafe_InputMessage">
+    <wsdl:part name="parameters" element="tns:usp_LisTipoCafe" />
+  </wsdl:message>
+  <wsdl:message name="ITablaGeneral_usp_LisTipoCafe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:usp_LisTipoCafeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITablaGeneral_usp_LisComboSacoCafe_InputMessage">
+    <wsdl:part name="parameters" element="tns:usp_LisComboSacoCafe" />
+  </wsdl:message>
+  <wsdl:message name="ITablaGeneral_usp_LisComboSacoCafe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:usp_LisComboSacoCafeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITablaGeneral_usp_LisLaboratorioDisponibleXCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:usp_LisLaboratorioDisponibleXCliente" />
+  </wsdl:message>
+  <wsdl:message name="ITablaGeneral_usp_LisLaboratorioDisponibleXCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:usp_LisLaboratorioDisponibleXClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITablaGeneral_usp_LisTipoRuma_InputMessage">
+    <wsdl:part name="parameters" element="tns:usp_LisTipoRuma" />
+  </wsdl:message>
+  <wsdl:message name="ITablaGeneral_usp_LisTipoRuma_OutputMessage">
+    <wsdl:part name="parameters" element="tns:usp_LisTipoRumaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITablaGeneral_usp_LisBusquedaClienteFiltro_InputMessage">
+    <wsdl:part name="parameters" element="tns:usp_LisBusquedaClienteFiltro" />
+  </wsdl:message>
+  <wsdl:message name="ITablaGeneral_usp_LisBusquedaClienteFiltro_OutputMessage">
+    <wsdl:part name="parameters" element="tns:usp_LisBusquedaClienteFiltroResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITablaGeneral_usp_LisContratoConGI_InputMessage">
+    <wsdl:part name="parameters" element="tns:usp_LisContratoConGI" />
+  </wsdl:message>
+  <wsdl:message name="ITablaGeneral_usp_LisContratoConGI_OutputMessage">
+    <wsdl:part name="parameters" element="tns:usp_LisContratoConGIResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ITablaGeneral">
+    <wsdl:operation name="usp_SelLocalIdEmpresaUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITablaGeneral/usp_SelLocalIdEmpresaUsuario" message="tns:ITablaGeneral_usp_SelLocalIdEmpresaUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITablaGeneral/usp_SelLocalIdEmpresaUsuarioResponse" message="tns:ITablaGeneral_usp_SelLocalIdEmpresaUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="usp_Mant_TIPO_COSECHA">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITablaGeneral/usp_Mant_TIPO_COSECHA" message="tns:ITablaGeneral_usp_Mant_TIPO_COSECHA_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITablaGeneral/usp_Mant_TIPO_COSECHAResponse" message="tns:ITablaGeneral_usp_Mant_TIPO_COSECHA_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="usp_Mant_CLIENTE_COSECHA">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITablaGeneral/usp_Mant_CLIENTE_COSECHA" message="tns:ITablaGeneral_usp_Mant_CLIENTE_COSECHA_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITablaGeneral/usp_Mant_CLIENTE_COSECHAResponse" message="tns:ITablaGeneral_usp_Mant_CLIENTE_COSECHA_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="usp_LisTipoCafe">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITablaGeneral/usp_LisTipoCafe" message="tns:ITablaGeneral_usp_LisTipoCafe_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITablaGeneral/usp_LisTipoCafeResponse" message="tns:ITablaGeneral_usp_LisTipoCafe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="usp_LisComboSacoCafe">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITablaGeneral/usp_LisComboSacoCafe" message="tns:ITablaGeneral_usp_LisComboSacoCafe_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITablaGeneral/usp_LisComboSacoCafeResponse" message="tns:ITablaGeneral_usp_LisComboSacoCafe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="usp_LisLaboratorioDisponibleXCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITablaGeneral/usp_LisLaboratorioDisponibleXCliente" message="tns:ITablaGeneral_usp_LisLaboratorioDisponibleXCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITablaGeneral/usp_LisLaboratorioDisponibleXClienteResponse" message="tns:ITablaGeneral_usp_LisLaboratorioDisponibleXCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="usp_LisTipoRuma">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITablaGeneral/usp_LisTipoRuma" message="tns:ITablaGeneral_usp_LisTipoRuma_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITablaGeneral/usp_LisTipoRumaResponse" message="tns:ITablaGeneral_usp_LisTipoRuma_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="usp_LisBusquedaClienteFiltro">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITablaGeneral/usp_LisBusquedaClienteFiltro" message="tns:ITablaGeneral_usp_LisBusquedaClienteFiltro_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITablaGeneral/usp_LisBusquedaClienteFiltroResponse" message="tns:ITablaGeneral_usp_LisBusquedaClienteFiltro_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="usp_LisContratoConGI">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITablaGeneral/usp_LisContratoConGI" message="tns:ITablaGeneral_usp_LisContratoConGI_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITablaGeneral/usp_LisContratoConGIResponse" message="tns:ITablaGeneral_usp_LisContratoConGI_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ITablaGeneral" type="tns:ITablaGeneral">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="usp_SelLocalIdEmpresaUsuario">
+      <soap:operation soapAction="http://tempuri.org/ITablaGeneral/usp_SelLocalIdEmpresaUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="usp_Mant_TIPO_COSECHA">
+      <soap:operation soapAction="http://tempuri.org/ITablaGeneral/usp_Mant_TIPO_COSECHA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="usp_Mant_CLIENTE_COSECHA">
+      <soap:operation soapAction="http://tempuri.org/ITablaGeneral/usp_Mant_CLIENTE_COSECHA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="usp_LisTipoCafe">
+      <soap:operation soapAction="http://tempuri.org/ITablaGeneral/usp_LisTipoCafe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="usp_LisComboSacoCafe">
+      <soap:operation soapAction="http://tempuri.org/ITablaGeneral/usp_LisComboSacoCafe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="usp_LisLaboratorioDisponibleXCliente">
+      <soap:operation soapAction="http://tempuri.org/ITablaGeneral/usp_LisLaboratorioDisponibleXCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="usp_LisTipoRuma">
+      <soap:operation soapAction="http://tempuri.org/ITablaGeneral/usp_LisTipoRuma" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="usp_LisBusquedaClienteFiltro">
+      <soap:operation soapAction="http://tempuri.org/ITablaGeneral/usp_LisBusquedaClienteFiltro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="usp_LisContratoConGI">
+      <soap:operation soapAction="http://tempuri.org/ITablaGeneral/usp_LisContratoConGI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TablaGeneral">
+    <wsdl:port name="BasicHttpBinding_ITablaGeneral" binding="tns:BasicHttpBinding_ITablaGeneral">
+      <soap:address location="http://192.168.51.88/WCF/SGOTouch/Services/TablaGeneral.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

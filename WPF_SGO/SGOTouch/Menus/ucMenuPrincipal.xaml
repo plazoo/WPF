@@ -1,0 +1,13 @@
+﻿<UserControl x:Class="SGOTouch.Menus.ucMenuPrincipal"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SGOTouch.Menus"
+             mc:Ignorable="d" >
+    <Grid Margin="0,0,10,0" Height="370" ScrollViewer.HorizontalScrollBarVisibility="Visible" VerticalAlignment="Top" >
+        <Button Margin="925,31,125,240" MinWidth="200" Content="Ticket" Name="btnTicket" FontSize="30" Click="btnTicket_Click" />
+        <Button Margin="925,221,125,50" MinWidth="200" Content="Guia Ingreso" FontSize="30"  Name="btnGI" Click="btnGI_Click"/>
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="TicketPesada" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/Persistence.domain" />
+      <xs:element name="GetComp">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetCompResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Persistence.domain" minOccurs="0" name="GetCompResult" nillable="true" type="q1:ArrayOfComprobanteCliente" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="usp_InsTicketPesada">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="TipoOperacion" type="xs:int" />
+            <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Persistence.domain" minOccurs="0" name="oBe" nillable="true" type="q2:TICKET_PESADA" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="usp_InsTicketPesadaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="usp_InsTicketPesadaResult" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="usp_LisTicketPesada">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="strEstado" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strFiltro" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strIdlocal" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strFechaIncio" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="strFechaFin" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="usp_LisTicketPesadaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Persistence.domain" minOccurs="0" name="usp_LisTicketPesadaResult" nillable="true" type="q3:ArrayOfusp_LisTicketPesada_Result" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="usp_ReporteTicketPesada">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="strIdTicketPesada" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="usp_ReporteTicketPesadaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Persistence.domain" minOccurs="0" name="usp_ReporteTicketPesadaResult" nillable="true" type="q4:ArrayOfusp_ReporteTicketPesada_Result" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Persistence.domain" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Persistence.domain" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="ArrayOfComprobanteCliente">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ComprobanteCliente" nillable="true" type="tns:ComprobanteCliente" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfComprobanteCliente" nillable="true" type="tns:ArrayOfComprobanteCliente" />
+      <xs:complexType name="ComprobanteCliente">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Correlativo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FechaOperacion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IdComprobante" type="xs:int" />
+          <xs:element minOccurs="0" name="IdTipoComprobante" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ImporteSubtotal" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="ImporteTotal" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Impuesto" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="InvoiceState" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NombreArhivo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RAZONSOCIAL_PRODELSUR" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RUC_PRODELSUR" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TipoMoneda" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ComprobanteCliente" nillable="true" type="tns:ComprobanteCliente" />
+      <xs:complexType name="TICKET_PESADA">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Cosecha" type="xs:int" />
+          <xs:element minOccurs="0" name="DsctoAgua" type="xs:decimal" />
+          <xs:element minOccurs="0" name="FechaModifica" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FechaRegistro" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FechaTicket" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="GiExcel" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GuiaRemision" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IdCliente" type="xs:int" />
+          <xs:element minOccurs="0" name="IdContactoCliente" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="IdEstado" type="xs:int" />
+          <xs:element minOccurs="0" name="IdExcel" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IdGuiaIngreso" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="IdGuiaRemision" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IdLaboratorio" type="xs:int" />
+          <xs:element minOccurs="0" name="IdLocal" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IdProceso" type="xs:int" />
+          <xs:element minOccurs="0" name="IdSaco" type="xs:int" />
+          <xs:element minOccurs="0" name="IdTicketPesada" type="xs:int" />
+          <xs:element minOccurs="0" name="IdTicketPesadaZona" type="xs:int" />
+          <xs:element minOccurs="0" name="IdTipoCafe" type="xs:int" />
+          <xs:element minOccurs="0" name="KgBruto" type="xs:decimal" />
+          <xs:element minOccurs="0" name="KgNeto" type="xs:decimal" />
+          <xs:element minOccurs="0" name="KgSeco" type="xs:decimal" />
+          <xs:element minOccurs="0" name="NroSaco" type="xs:int" />
+          <xs:element minOccurs="0" name="Observaciones" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PesoSaco" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Tara" type="xs:decimal" />
+          <xs:element minOccurs="0" name="UsuarioModifica" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UsuarioRegistro" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="TICKET_PESADA" nillable="true" type="tns:TICKET_PESADA" />
+      <xs:complexType name="ArrayOfusp_LisTicketPesada_Result">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="usp_LisTicketPesada_Result" nillable="true" type="tns:usp_LisTicketPesada_Result" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfusp_LisTicketPesada_Result" nillable="true" type="tns:ArrayOfusp_LisTicketPesada_Result" />
+      <xs:complexType name="usp_LisTicketPesada_Result">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CLIENTE" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CODIGOLABORATORIO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CODIGOTICKETPESADA" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="COSECHA" type="xs:int" />
+          <xs:element minOccurs="0" name="DEPARTAMENTO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DESCLABORATORIO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DESCUSUARIOMODIFICA" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DESCUSUARIOREGISTRO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DISTRITO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DOCIDENTIDAD" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DSCTOAGUA" type="xs:decimal" />
+          <xs:element minOccurs="0" name="FECHAMODIFICA" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FECHAREGISTRO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FECHATICKET" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GUIAREMISION" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HUMEDADZONA" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="IDCLIENTE" type="xs:int" />
+          <xs:element minOccurs="0" name="IDCONTACTOCLIENTE" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="IDESTADO" type="xs:int" />
+          <xs:element minOccurs="0" name="IDGUIAREMISION" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IDLABORATORIO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IDLOCAL" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IDPROCESO" type="xs:int" />
+          <xs:element minOccurs="0" name="IDSACO" type="xs:int" />
+          <xs:element minOccurs="0" name="IDTICKETPESADA" type="xs:int" />
+          <xs:element minOccurs="0" name="IDTIPOCAFE" type="xs:int" />
+          <xs:element minOccurs="0" name="KGBRUTO" type="xs:decimal" />
+          <xs:element minOccurs="0" name="KGNETO" type="xs:decimal" />
+          <xs:element minOccurs="0" name="KGSECO" type="xs:decimal" />
+          <xs:element minOccurs="0" name="NROSACO" type="xs:int" />
+          <xs:element minOccurs="0" name="OBSERVACIONES" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PESOSACO" type="xs:decimal" />
+          <xs:element minOccurs="0" name="PORCRENDIMIENTO" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="PROVINCIA" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TARA" type="xs:decimal" />
+          <xs:element minOccurs="0" name="TIPOCAFE" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="USUARIOMODIFICA" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="USUARIOREGISTRO" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="usp_LisTicketPesada_Result" nillable="true" type="tns:usp_LisTicketPesada_Result" />
+      <xs:complexType name="ArrayOfusp_ReporteTicketPesada_Result">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="usp_ReporteTicketPesada_Result" nillable="true" type="tns:usp_ReporteTicketPesada_Result" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfusp_ReporteTicketPesada_Result" nillable="true" type="tns:ArrayOfusp_ReporteTicketPesada_Result" />
+      <xs:complexType name="usp_ReporteTicketPesada_Result">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CALIDAD" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CLIENTE" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DESCUSUARIOREGISTRO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DOCIDENTIDAD" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DSCTOAGUA" type="xs:decimal" />
+          <xs:element minOccurs="0" name="FECHAREGISTRO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FECHATICKET" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HUMEDAD" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IDESTADO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IDLABORATORIO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IDPROCESO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IDTICKETPESADA" type="xs:int" />
+          <xs:element minOccurs="0" name="IDTICKETPESADAZONA" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="KGBRUTO" type="xs:decimal" />
+          <xs:element minOccurs="0" name="KGNETO" type="xs:decimal" />
+          <xs:element minOccurs="0" name="KGSECO" type="xs:decimal" />
+          <xs:element minOccurs="0" name="LOCAL" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LOCAL_LABORATORIO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NROSACO" type="xs:int" />
+          <xs:element minOccurs="0" name="OBSERVACIONES" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PESOSACO" type="xs:decimal" />
+          <xs:element minOccurs="0" name="RENDIMINETO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TARA" type="xs:decimal" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="usp_ReporteTicketPesada_Result" nillable="true" type="tns:usp_ReporteTicketPesada_Result" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="ITicketPesada_GetComp_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetComp" />
+  </wsdl:message>
+  <wsdl:message name="ITicketPesada_GetComp_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITicketPesada_usp_InsTicketPesada_InputMessage">
+    <wsdl:part name="parameters" element="tns:usp_InsTicketPesada" />
+  </wsdl:message>
+  <wsdl:message name="ITicketPesada_usp_InsTicketPesada_OutputMessage">
+    <wsdl:part name="parameters" element="tns:usp_InsTicketPesadaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITicketPesada_usp_LisTicketPesada_InputMessage">
+    <wsdl:part name="parameters" element="tns:usp_LisTicketPesada" />
+  </wsdl:message>
+  <wsdl:message name="ITicketPesada_usp_LisTicketPesada_OutputMessage">
+    <wsdl:part name="parameters" element="tns:usp_LisTicketPesadaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITicketPesada_usp_ReporteTicketPesada_InputMessage">
+    <wsdl:part name="parameters" element="tns:usp_ReporteTicketPesada" />
+  </wsdl:message>
+  <wsdl:message name="ITicketPesada_usp_ReporteTicketPesada_OutputMessage">
+    <wsdl:part name="parameters" element="tns:usp_ReporteTicketPesadaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ITicketPesada">
+    <wsdl:operation name="GetComp">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITicketPesada/GetComp" message="tns:ITicketPesada_GetComp_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITicketPesada/GetCompResponse" message="tns:ITicketPesada_GetComp_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="usp_InsTicketPesada">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITicketPesada/usp_InsTicketPesada" message="tns:ITicketPesada_usp_InsTicketPesada_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITicketPesada/usp_InsTicketPesadaResponse" message="tns:ITicketPesada_usp_InsTicketPesada_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="usp_LisTicketPesada">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITicketPesada/usp_LisTicketPesada" message="tns:ITicketPesada_usp_LisTicketPesada_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITicketPesada/usp_LisTicketPesadaResponse" message="tns:ITicketPesada_usp_LisTicketPesada_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="usp_ReporteTicketPesada">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITicketPesada/usp_ReporteTicketPesada" message="tns:ITicketPesada_usp_ReporteTicketPesada_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITicketPesada/usp_ReporteTicketPesadaResponse" message="tns:ITicketPesada_usp_ReporteTicketPesada_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ITicketPesada" type="tns:ITicketPesada">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetComp">
+      <soap:operation soapAction="http://tempuri.org/ITicketPesada/GetComp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="usp_InsTicketPesada">
+      <soap:operation soapAction="http://tempuri.org/ITicketPesada/usp_InsTicketPesada" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="usp_LisTicketPesada">
+      <soap:operation soapAction="http://tempuri.org/ITicketPesada/usp_LisTicketPesada" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="usp_ReporteTicketPesada">
+      <soap:operation soapAction="http://tempuri.org/ITicketPesada/usp_ReporteTicketPesada" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TicketPesada">
+    <wsdl:port name="BasicHttpBinding_ITicketPesada" binding="tns:BasicHttpBinding_ITicketPesada">
+      <soap:address location="http://192.168.51.88/WCF/SGOTouch/Services/TicketPesada.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

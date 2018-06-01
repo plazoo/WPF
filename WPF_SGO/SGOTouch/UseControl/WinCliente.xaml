@@ -1,0 +1,93 @@
+﻿<!--<Controls:MetroWindow
+    xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"-->
+<Window
+    x:Class="SGOTouch.UseControl.WinCliente"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SGOTouch.UseControl"
+        mc:Ignorable="d"
+        Title="WinCliente" Height="513.956" Width="1130.992" Icon="/SGOTouch;component/Asset/images/iconos/ic_delete.gif" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <!--<Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+                
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>-->
+    <Grid Margin="0,0,2,2">
+        <!--<TextBlock
+            Name="MyFadingText"
+            Margin="350,435,96,31" FontSize="20" FontWeight="Bold" Foreground="Maroon">
+            Puede buscar por Nombre comercial, Documento o Codigo del Cliente
+            -->
+        <!-- Animates the text block's opacity. -->
+        <!--
+            <TextBlock.Triggers>
+                <EventTrigger RoutedEvent="TextBlock.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation
+                                Storyboard.TargetName="MyFadingText" 
+                                Storyboard.TargetProperty="(TextBlock.Opacity)"
+                                From="1.0" To="0.0" Duration="0:0:5" 
+                                AutoReverse="False"  />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </TextBlock.Triggers>
+        </TextBlock>-->
+
+        <Label Grid.Column="0" x:Name="label1" FontSize="30" Content="Cliente" HorizontalAlignment="Left" Margin="42,58,0,0" VerticalAlignment="Top" Height="42" Width="127"/>
+        <TextBox  FontSize="30" KeyDown="txtDesc_KeyDown" x:Name="txtDesc" HorizontalAlignment="Left" Height="42" Margin="196,58,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="402" TabIndex="3"  />
+
+
+        <!--<GroupBox x:Name="groupBox" Header="Buscar Cliente" FontSize="35" HorizontalAlignment="Left" Height="470" Margin="10,10,0,-16" VerticalAlignment="Top" Width="1094" RenderTransformOrigin="0.5,0.5">
+            <GroupBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.16"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </GroupBox.RenderTransform>-->
+        <Grid>
+            <Button  FontSize="30" x:Name="btnBuscar" Content="Buscar" HorizontalAlignment="Left" Margin="630,50,0,0" VerticalAlignment="Top" Width="196" RenderTransformOrigin="1.03,0.259" Height="49" TabIndex="2" Click="btnBuscar_Click"/>
+            <Button  FontSize="30" x:Name="btnSalir" Content="Salir" HorizontalAlignment="Left" Margin="862,50,0,0" VerticalAlignment="Top" Width="196" RenderTransformOrigin="1.03,0.259" Height="49" TabIndex="2" Click="btnSalir_Click"/>
+            <!--<ScrollViewer HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden">
+                    <ScrollViewer.Resources>
+                        <Style TargetType="ScrollBar">
+                            <Setter Property="Width" Value="50"/>
+                        </Style>
+                    </ScrollViewer.Resources>-->
+            <StackPanel x:Name="sPanelOne" Margin="0,0,0,-31" >
+                <ListView x:Name="listViewCliente" ScrollViewer.HorizontalScrollBarVisibility="Hidden" FontSize="30" Margin="28,115,0,0" Height="310"  SelectionMode="Single" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="1047" SelectionChanged="listViewCliente_SelectionChanged">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="" DisplayMemberBinding="{Binding Path=IDCLIENTESGO}" Width="0"/>
+                            <GridViewColumn Header="Cliente" DisplayMemberBinding="{Binding Path=CLIENTE}"  />
+                            <GridViewColumn Header="Tipo Doc." DisplayMemberBinding="{Binding Path=TIPO_DOCUMENTO}" />
+                            <GridViewColumn Header="Nro. Doc." DisplayMemberBinding="{Binding Path=DOCIDENTIDAD}"  />
+                            <GridViewColumn Header="Departamento" DisplayMemberBinding="{Binding Path=DEPARTAMENTO}"  />
+                            <GridViewColumn Header="Provincia" DisplayMemberBinding="{Binding Path=PROVINCIA}"  />
+                            <GridViewColumn Header="Distrito" DisplayMemberBinding="{Binding Path=DISTRITO}" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+
+            </StackPanel>
+            <!--</ScrollViewer>-->
+        </Grid>
+
+        <!--</GroupBox>-->
+        <!--<Button x:Name="btnSalir" Content="Salir" HorizontalAlignment="Left" Margin="865,66,0,0" VerticalAlignment="Top" Width="145" Click="btnSalir_Click" Height="49"/>-->
+
+    </Grid>
+    <!--</Controls:MetroWindow>-->
+</Window>
